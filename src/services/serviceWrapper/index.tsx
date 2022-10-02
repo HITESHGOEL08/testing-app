@@ -2,16 +2,27 @@ import axios from "axios";
 import { configs } from "../../config/config";
 
 export class serviceWrapper {
+  static getMethod = () => {
+    return axios({
+      method: "get",
+      baseURL: configs.BASEURL,
+      url: "test",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
 
-    static getMethod = () => {
-        return axios({
-            method: "get",
-            baseURL: configs.BASEURL,
-            url: "test",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
 
-    }
+  static postMethod = () => {
+    return axios({
+      method: "post",
+      baseURL: configs.BASEURL,
+      url: "test",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
+
 }
